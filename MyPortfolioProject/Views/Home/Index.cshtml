@@ -3,62 +3,37 @@
 }
 
 <style>
-    :root {
-        --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-        --dark-bg: #0f172a;
-        --card-bg: rgba(30, 41, 59, 0.7);
-        --border-color: rgba(255, 255, 255, 0.1);
-    }
-
-    body {
-        background-color: var(--dark-bg);
-        color: #f1f5f9;
-        font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
-    }
-
-    /* Glow Text Gradient */
-    .text-gradient {
-        background: var(--primary-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    /* Premium Glassmorphism Cards */
-    .glass-card {
-        background: var(--card-bg);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid var(--border-color);
+    .portfolio-card {
+        background: #ffffff;
+        border: 2px solid #000000;
         border-radius: 20px;
-        transition: all 0.3s ease-in-out;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
-            border-color: rgba(99, 102, 241, 0.4);
+        .portfolio-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(124, 58, 237, 0.12);
         }
 
-    /* Modern Profile Image Frame */
     .profile-img-container {
         position: relative;
-        width: 320px;
-        height: 320px;
+        width: 300px;
+        height: 300px;
         margin: 0 auto;
     }
 
         .profile-img-container::before {
             content: '';
             position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
             background: var(--primary-gradient);
             border-radius: 50%;
             z-index: -1;
-            filter: blur(8px);
-            opacity: 0.8;
+            filter: blur(4px);
         }
 
     .profile-img-wrapper {
@@ -66,7 +41,7 @@
         height: 100%;
         border-radius: 50%;
         overflow: hidden;
-        border: 4px solid var(--dark-bg);
+        border: 3px solid #000000;
     }
 
         .profile-img-wrapper img {
@@ -75,131 +50,612 @@
             object-fit: cover;
         }
 
-    /* Custom Badges */
     .badge-custom {
-        background: rgba(99, 102, 241, 0.15);
-        color: #a5b4fc;
-        border: 1px solid rgba(99, 102, 241, 0.3);
+        background: rgba(124, 58, 237, 0.08);
+        color: #7c3aed;
+        border: 1.5px solid #000000;
         padding: 8px 16px;
         border-radius: 30px;
         font-size: 0.85rem;
+        font-weight: 700;
+    }
+
+    /* Standard Interactive Pills for skills */
+    .skill-pill {
+        background-color: #ffffff;
+        border: 1.5px solid #000000;
+        border-radius: 12px;
+        padding: 8px 14px;
+        font-size: 0.9rem;
         font-weight: 600;
-    }
-
-    /* Sleek buttons */
-    .btn-gradient {
-        background: var(--primary-gradient);
-        color: #fff;
-        border: none;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-        .btn-gradient:hover {
-            color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
-        }
-
-    .btn-outline-custom {
-        color: #f1f5f9;
-        border: 1px solid var(--border-color);
-        background: rgba(255, 255, 255, 0.05);
+        color: #1e293b;
+        display: inline-block;
         transition: all 0.2s ease;
     }
 
-        .btn-outline-custom:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border-color: #a855f7;
+        .skill-pill:hover {
+            background: var(--primary-gradient);
+            color: #ffffff !important;
+            border-color: #7c3aed;
+            transform: scale(1.05);
+        }
+
+    /* Sub-card within skills for categorization */
+    .skill-category-card {
+        background: #fafafa;
+        border: 1.5px solid #000000;
+        border-radius: 16px;
+        padding: 20px;
+        height: 100%;
+    }
+
+    .timeline-item {
+        border-left: 3px solid #000000;
+        padding-left: 24px;
+        position: relative;
+    }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #7c3aed;
+            border: 2px solid #000000;
+            border-radius: 50%;
+            left: -9px;
+            top: 14px;
+        }
+
+    /* Beautiful Light Button with Black Border */
+    .btn-download-custom {
+        background-color: #f3f0ff;
+        color: #7c3aed;
+        border: 2.5px solid #000000;
+        border-radius: 14px;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+        box-shadow: 0 4px 0px #000000;
+        transition: all 0.2s ease;
+    }
+
+        .btn-download-custom:hover {
+            background-color: #e8e3ff;
+            color: #6d28d9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0px #000000;
+        }
+
+        .btn-download-custom:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0px #000000;
+        }
+
+    .section-title {
+        font-weight: 800;
+        color: #000000;
+    }
+
+    /* Custom styles for Institution Logos */
+    .institution-logo-container {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        border: 2px solid #000000;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .institution-logo-container img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+        }
+
+    /* Small Tech Stack Logo Boxes */
+    .tech-logo-box {
+        border: 2px solid #000000;
+        border-radius: 14px;
+        background-color: #ffffff;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 85px;
+        box-shadow: 0 4px 0px #000000;
+        transition: all 0.2s ease;
+    }
+
+        .tech-logo-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 0px #000000;
+            background-color: #f3f0ff;
+        }
+
+        .tech-logo-box img {
+            max-width: 100%;
+            max-height: 50px;
+            object-fit: contain;
         }
 </style>
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-
-<div class="container py-5 my-5">
-    <div class="row align-items-center gy-5">
-        <div class="col-lg-6 text-center text-lg-start">
+<div class="container px-5 py-5 my-4">
+    <div class="row align-items-center gy-5 mb-5 pb-4">
+        <div class="col-lg-7 text-center text-lg-start">
             <div class="d-inline-flex mb-3">
                 <span class="badge-custom">
                     <i class="bi bi-laptop me-2"></i> Full Stack Developer
                 </span>
             </div>
-            <h1 class="display-3 fw-extrabold mb-4" style="font-weight: 800;">
+            <h1 class="display-3 fw-extrabold mb-4" style="font-weight: 800; color: #000000;">
                 Hi, I'm <span class="text-gradient">John Doe</span>
             </h1>
-            <p class="lead text-muted fs-4 mb-5" style="max-width: 500px; line-height: 1.6;">
+            <p class="lead text-muted fs-4 mb-4" style="line-height: 1.6;">
                 I craft scalable web applications, robust APIs, and clean user interfaces using modern backend and frontend technologies.
             </p>
 
-            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
-                <a class="btn btn-gradient btn-lg px-4 py-3 fw-bold" asp-controller="Home" asp-action="Resume">
-                    Explore Resume <i class="bi bi-arrow-right ms-2"></i>
-                </a>
-                <a class="btn btn-outline-custom btn-lg px-4 py-3 fw-bold" asp-controller="Home" asp-action="DownloadCV">
+            <div class="d-flex justify-content-center justify-content-lg-start">
+                <a class="btn btn-download-custom btn-lg px-5 py-3 d-inline-flex align-items-center" asp-controller="Home" asp-action="DownloadCV">
                     Download CV <i class="bi bi-download ms-2"></i>
                 </a>
             </div>
         </div>
 
-        <div class="col-lg-6">
+        <div class="col-lg-5">
             <div class="profile-img-container">
                 <div class="profile-img-wrapper">
-                    <img src="~/assets/profile.png" alt="Profile Picture" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=500&h=500'" />
+                    <img src="~/assets/profile.png" asp-append-version="true" alt="Profile Picture" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=500&h=500'" />
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row mt-5 pt-5">
+    <div class="row mb-5">
         <div class="col-12">
-            <div class="glass-card p-5">
-                <div class="row align-items-center">
-                    <div class="col-md-3 mb-4 mb-md-0 text-center text-md-start">
-                        <h2 class="fw-bold mb-0">About <span class="text-gradient">Me</span></h2>
+            <div class="portfolio-card p-5">
+                <h2 class="section-title mb-4">About <span class="text-gradient">Me</span></h2>
+                <div class="row gy-4 align-items-center">
+                    <div class="col-lg-8">
+                        <p class="lead text-dark mb-0" style="line-height: 1.8; font-size: 1.15rem; text-align: justify; color: #000000;">
+                            I am a recent graduate from the Department of Computer Science and Engineering (CSE). I served as a Coordinator, Trainer, and Mentor at the IIUC Competitive Programming Society (IIUCCPS) for over two years and worked as a Teaching Assistant for more than two years. Passionate about software development, problem-solving, teaching, and continuous learning, I am committed to expanding my technical expertise and aspire to build innovative, high-quality software solutions while making meaningful contributions to the technology community.
+                        </p>
                     </div>
-                    <div class="col-md-9 border-start border-secondary ps-md-4">
-                        <p class="lead text-muted mb-0" style="line-height: 1.8;">
-                            A passionate developer with a strong foundation in MVC architecture, database systems, and UI components. I thrive on translating complex problems into beautiful, intuitive, and highly performant digital tools.
+                    <div class="col-lg-4">
+                        <div class="p-4 rounded-4" style="border: 2px dashed #000000; background-color: #fafafa;">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-mortarboard-fill text-primary fs-3 me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">CSE Graduate</h6>
+                                    <small class="text-muted">Fresh Alumnus</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-trophy-fill text-primary fs-3 me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">IIUCCPS Coordinator</h6>
+                                    <small class="text-muted">2+ Years Mentorship</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-journal-bookmark-fill text-primary fs-3 me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Teaching Assistant</h6>
+                                    <small class="text-muted">2+ Years Experience</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="portfolio-card p-5">
+                <h2 class="section-title mb-5">My <span class="text-gradient">Skills</span></h2>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill-category-card">
+                            <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-code-slash me-2 text-primary"></i>Languages</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="skill-pill">C</span>
+                                <span class="skill-pill">C++</span>
+                                <span class="skill-pill">C#</span>
+                                <span class="skill-pill">Python</span>
+                                <span class="skill-pill">PHP</span>
+                                <span class="skill-pill">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill-category-card">
+                            <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-globe me-2 text-primary"></i>Web & Frameworks</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="skill-pill">HTML</span>
+                                <span class="skill-pill">CSS</span>
+                                <span class="skill-pill">Bootstrap</span>
+                                <span class="skill-pill">ASP.NET Core MVC</span>
+                                <span class="skill-pill">Flask</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill-category-card">
+                            <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-server me-2 text-primary"></i>Databases</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="skill-pill">MySQL</span>
+                                <span class="skill-pill">MS SQL Server</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill-category-card">
+                            <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-cpu me-2 text-primary"></i>AI & Machine Learning</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="skill-pill">TensorFlow</span>
+                                <span class="skill-pill">Machine Learning</span>
+                                <span class="skill-pill">Deep Learning</span>
+                                <span class="skill-pill">Computer Vision</span>
+                                <span class="skill-pill">Image Processing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill-category-card">
+                            <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-tools me-2 text-primary"></i>Tools & Platforms</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="skill-pill">Git</span>
+                                <span class="skill-pill">GitHub</span>
+                                <span class="skill-pill">Visual Studio</span>
+                                <span class="skill-pill">VS Code</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill-category-card">
+                            <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-people me-2 text-primary"></i>Professional Attributes</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="skill-pill">Public Speaking</span>
+                                <span class="skill-pill">Teaching & Mentoring</span>
+                                <span class="skill-pill">Team Collaboration</span>
+                                <span class="skill-pill">Communication</span>
+                                <span class="skill-pill">Leadership</span>
+                                <span class="skill-pill">Content Creation</span>
+                                <span class="skill-pill">Technical Writing</span>
+                                <span class="skill-pill">Time Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 p-4 rounded-4" style="border: 2.5px solid #000000; background-color: #f8fafc;">
+                    <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-translate me-2 text-primary"></i>Spoken Languages</h5>
+                    <div class="row gy-3">
+                        <div class="col-sm-4">
+                            <div class="fw-bold text-dark mb-1">Bangla</div>
+                            <div class="text-muted small">Native / Bilingual</div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="fw-bold text-dark mb-1">English</div>
+                            <div class="text-muted small">Professional Working Proficiency</div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="fw-bold text-dark mb-1">Hindi</div>
+                            <div class="text-muted small">Conversational</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-2">
+                    <div class="row g-3">
+                        <div class="col-6 col-md-3">
+                            <div class="tech-logo-box">
+                                <img src="~/assets/csharp_logo.png" alt="C# Logo" onerror="this.src='https://via.placeholder.com/60?text=C%23'" />
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="tech-logo-box">
+                                <img src="~/assets/dotnet_logo.png" alt="ASP.NET Core Logo" onerror="this.src='https://via.placeholder.com/60?text=.NET'" />
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="tech-logo-box">
+                                <img src="~/assets/mssql.png" alt="mssql Logo" onerror="this.src='https://via.placeholder.com/60?text=Python'" />
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="tech-logo-box">
+                                <img src="~/assets/vss.png" alt="vss Logo" onerror="this.src='https://via.placeholder.com/60?text=C%2B%2B'" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="portfolio-card p-5">
+                <h2 class="section-title mb-5">Experience & <span class="text-gradient">Affiliations</span></h2>
+
+                <div class="timeline-item mb-5">
+                    <div class="d-flex align-items-start gap-3 flex-column flex-sm-row">
+                        <div class="institution-logo-container">
+                            <img src="~/assets/iiuc_logo.png" alt="IIUC Logo" onerror="this.src='https://via.placeholder.com/50?text=IIUC'" />
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between flex-wrap align-items-center mb-1">
+                                <h4 class="fw-bold mb-0">Teaching Assistant</h4>
+                                <span class="text-muted fw-bold">Over 1.5 Years</span>
+                            </div>
+                            <h6 class="text-primary fw-bold mb-3">International Islamic University Chittagong (IIUC)</h6>
+                            <p class="text-dark mb-2 fw-semibold">Assisted and guided juniors in core curricular courses, including:</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-light text-dark border border-dark">C Programming</span>
+                                <span class="badge bg-light text-dark border border-dark">Python Programming</span>
+                                <span class="badge bg-light text-dark border border-dark">DBMS</span>
+                                <span class="badge bg-light text-dark border border-dark">Operating Systems</span>
+                                <span class="badge bg-light text-dark border border-dark">Compiler Design</span>
+                                <span class="badge bg-light text-dark border border-dark">Computer Graphics</span>
+                                <span class="badge bg-light text-dark border border-dark">Pattern Recognition & Image Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item mb-5">
+                    <div class="d-flex align-items-start gap-3 flex-column flex-sm-row">
+                        <div class="institution-logo-container">
+                            <img src="~/assets/iiuccps_logo.png" alt="IIUCCPS Logo" onerror="this.src='https://via.placeholder.com/50?text=CPS'" />
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between flex-wrap align-items-center mb-1">
+                                <h4 class="fw-bold mb-0">Coordinator, Mentor & Trainer</h4>
+                                <span class="text-muted fw-bold">2+ Years</span>
+                            </div>
+                            <h6 class="text-primary fw-bold mb-3">IIUC Competitive Programming Society (IIUCCPS)</h6>
+                            <p class="text-dark mb-0">
+                                Actively trained, structured camps, and helped establish competitive coding algorithms for student participants.
+                            </p>
+                            <ul class="text-muted mt-2 ps-3">
+                                <li>Mentored over 40+ active members.</li>
+                                <li>Delivered algorithmic training sessions to 50+ students.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item mb-5">
+                    <div class="d-flex align-items-start gap-3 flex-column flex-sm-row">
+                        <div class="institution-logo-container">
+                            <img src="~/assets/ostad_logo.png" alt="Ostad Logo" onerror="this.src='https://via.placeholder.com/50?text=Ostad'" />
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between flex-wrap align-items-center mb-1">
+                                <h4 class="fw-bold mb-0">Full-Stack Web Development Program</h4>
+                                <span class="text-muted fw-bold">6 Months</span>
+                            </div>
+                            <h6 class="text-primary fw-bold mb-2">Ostad</h6>
+                            <p class="text-dark mb-0">
+                                Completed intensive professional training on full-stack frameworks prioritizing architectural system designs with ASP.NET Core.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item mb-5">
+                    <div class="d-flex align-items-start gap-3 flex-column flex-sm-row">
+                        <div class="institution-logo-container">
+                            <img src="~/assets/edge_logo.png" alt="Edge Skills Logo" onerror="this.src='https://via.placeholder.com/50?text=Edge'" />
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between flex-wrap align-items-center mb-1">
+                                <h4 class="fw-bold mb-0">PHP & Laravel Web Certification</h4>
+                                <span class="text-muted fw-bold">Completed</span>
+                            </div>
+                            <h6 class="text-primary fw-bold mb-2">Edge Digital Skills Training</h6>
+                            <p class="text-dark mb-0">
+                                Acquired deep fundamental routing, request lifecycle handling, and application development flow skills in modern PHP and Laravel frameworks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item mb-5">
+                    <div class="d-flex align-items-start gap-3 flex-column flex-sm-row">
+                        <div class="institution-logo-container">
+                            <img src="~/assets/business_club_logo.png" alt="IIUC Business Club Logo" onerror="this.src='https://via.placeholder.com/50?text=BC'" />
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between flex-wrap align-items-center mb-1">
+                                <h4 class="fw-bold mb-0">Workshop on Professional Development</h4>
+                                <span class="text-muted fw-bold">Completed</span>
+                            </div>
+                            <h6 class="text-primary fw-bold mb-2">IIUC Business Club</h6>
+                            <p class="text-dark mb-0">
+                                Participated in comprehensive corporate behavior frameworks, interview skills, and professional strategy development.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item mb-5">
+                    <div class="d-flex align-items-start gap-3 flex-column flex-sm-row">
+                        <div class="institution-logo-container">
+                            <img src="~/assets/ieee_cs_logo.png" alt="IEEE CS Logo" onerror="this.src='https://via.placeholder.com/50?text=IEEE'" />
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between flex-wrap align-items-center mb-1">
+                                <h4 class="fw-bold mb-0">App Development Crash Course</h4>
+                                <span class="text-muted fw-bold">Completed</span>
+                            </div>
+                            <h6 class="text-primary fw-bold mb-2">IEEE Computer Society (IEEE CS)</h6>
+                            <p class="text-dark mb-0">
+                                Experienced high-intensity training module covering interface creation paradigms and modular mobile framework structure.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item mb-5">
+                    <div class="d-flex align-items-start gap-3 flex-column flex-sm-row">
+                        <div class="institution-logo-container">
+                            <img src="~/assets/ai_prompt.png" alt="AI Prompt Engineering" onerror="this.src='https://via.placeholder.com/50?text=IEEE'" />
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between flex-wrap align-items-center mb-1">
+                                <h4 class="fw-bold mb-0">AI Prompt Engineer Level 1</h4>
+                                <span class="text-muted fw-bold">Completed</span>
+                            </div>
+                            <h6 class="text-primary fw-bold mb-2">NetCom Learning</h6>
+                            <p class="text-dark mb-0">
+                                Learned prompt engineering, LLM interaction, and practical applications of generative AI.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="d-flex align-items-start gap-3 flex-column flex-sm-row">
+                        <div class="institution-logo-container">
+                            <img src="~/assets/10minschool_logo.png" alt="10 Min School Logo" onerror="this.src='https://via.placeholder.com/50?text=10MS'" />
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between flex-wrap align-items-center mb-1">
+                                <h4 class="fw-bold mb-0">Communication Masterclass</h4>
+                                <span class="text-muted fw-bold">Completed</span>
+                            </div>
+                            <h6 class="text-primary fw-bold mb-2">10 Minute School</h6>
+                            <p class="text-dark mb-0">
+                                Trained in active listening, strategic corporate speaking practices, presentation management, and leadership interactions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="portfolio-card p-5">
+                <h2 class="section-title mb-4">Education</h2>
+
+                <div class="timeline-item mb-4">
+                    <div class="d-flex justify-content-between flex-wrap align-items-center">
+                        <h4 class="fw-bold mb-1">B.Sc. in Computer Science & Engineering</h4>
+                        <span class="text-muted fw-bold">Graduated</span>
+                    </div>
+                    <h6 class="text-primary fw-bold mb-2">International Islamic University Chittagong (IIUC), Chittagong</h6>
+                    <p class="mb-2 text-dark"><strong>CGPA:</strong> 3.642</p>
+                    <div class="p-3 rounded-3 mt-2" style="border: 1px dashed #000000; background-color: #fafafa;">
+                        <span class="badge bg-primary mb-2 text-uppercase">B.Sc Thesis</span>
+                        <p class="mb-0 text-dark" style="font-size: 0.95rem; line-height: 1.6;">
+                            <strong>Title:</strong> Morphological Decomposition-based Lesion Focused Deep Learning Framework for Diabetic Retinopathy Grading with Comparative Analysis Against Discrete Wavelet Transform
                         </p>
                     </div>
                 </div>
+
+                <div class="timeline-item">
+                    <div class="d-flex justify-content-between flex-wrap align-items-center">
+                        <h4 class="fw-bold mb-1">Higher Secondary Certificate (HSC)</h4>
+                        <span class="text-muted fw-bold">Completed</span>
+                    </div>
+                    <h6 class="text-primary fw-bold mb-0">Bangladesh Navy School and College</h6>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="row mt-5 pt-4">
-        <div class="col-12 text-center mb-5">
-            <h3 class="fw-bold fs-2">Beyond the <span class="text-gradient">Code</span></h3>
-            <p class="text-muted">What I spend my time on when I am not typing syntax</p>
-        </div>
-
-        <div class="col-md-6 mb-4">
-            <div class="glass-card p-4 h-100 d-flex flex-column">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="p-3 rounded-3 bg-primary bg-opacity-10 text-primary me-3">
-                        <i class="bi bi-people-fill fs-3 text-gradient"></i>
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="portfolio-card p-5">
+                <h2 class="section-title mb-5">Featured <span class="text-gradient">Projects</span></h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="p-4 rounded-4 h-100" style="border: 2px solid #000000; background: #fafafa;">
+                            <h4 class="fw-bold text-primary mb-2">E-Commerce Web Portal</h4>
+                            <p class="text-muted">Built dynamic inventory management pages using ASP.NET Core MVC, Entity Framework Core, and SQL Server backend configurations.</p>
+                            <a href="#" class="text-decoration-none fw-bold text-gradient">View Repository <i class="bi bi-github ms-1"></i></a>
+                        </div>
                     </div>
-                    <h5 class="fw-bold mb-0">Tech Community Mentor</h5>
+                    <div class="col-md-6">
+                        <div class="p-4 rounded-4 h-100" style="border: 2px solid #000000; background: #fafafa;">
+                            <h4 class="fw-bold text-primary mb-2">Interactive Portfolio Framework</h4>
+                            <p class="text-muted">An integrated lightweight landing architecture utilizing responsive Bootstrap 5 cards and custom gradient themes.</p>
+                            <a href="#" class="text-decoration-none fw-bold text-gradient">View Repository <i class="bi bi-github ms-1"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-muted flex-grow-1">
-                    Guided over 50+ freshman students on data structures, basic algorithms, and setting up their first ASP.NET environments.
-                </p>
             </div>
         </div>
+    </div>
 
-        <div class="col-md-6 mb-4">
-            <div class="glass-card p-4 h-100 d-flex flex-column">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="p-3 rounded-3 bg-primary bg-opacity-10 text-primary me-3">
-                        <i class="bi bi-trophy-fill fs-3 text-gradient"></i>
-                    </div>
-                    <h5 class="fw-bold mb-0">Open Source Contributor</h5>
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="portfolio-card p-5">
+                <h2 class="section-title mb-4">Publications</h2>
+                <div class="p-3 mb-2 rounded-3" style="border: 1.5px dashed #000000;">
+                    <h5 class="fw-bold mb-1">“Enhancing Microservice Security Frameworks in Cloud Systems”</h5>
+                    <p class="text-muted mb-1">Published in the International Journal of Computer Applications (IJCA), 2025.</p>
+                    <a href="#" class="text-decoration-none text-primary fw-bold small">Read Publication <i class="bi bi-box-arrow-up-right ms-1"></i></a>
                 </div>
-                <p class="text-muted flex-grow-1">
-                    Actively maintaining utility scripts and contributing styling improvements to public developer toolkits.
-                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="portfolio-card p-5">
+                <h2 class="section-title mb-4">Achievements</h2>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-3 d-flex align-items-start">
+                        <i class="bi bi-patch-check-fill text-primary me-3 fs-5"></i>
+                        <div>
+                            <strong class="text-dark">IIUCCPS Service Recognition:</strong>
+                            Commended for exceptional leadership and contribution to programming culture over 2 active years.
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <i class="bi bi-patch-check-fill text-primary me-3 fs-5"></i>
+                        <div>
+                            <strong class="text-dark">Undergraduate Academic Merits:</strong>
+                            Recognized multiple semesters for consistent performance in challenging computational workloads.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="portfolio-card p-5">
+                <h2 class="section-title mb-4">Extra-curricular Activities</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <h5 class="fw-bold text-primary"><i class="bi bi-people-fill me-2"></i>Tech Community Mentor</h5>
+                        <p class="text-muted">Guided over 50+ freshman students on setting up operational web environment frameworks and understanding structural patterns.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="fw-bold text-primary"><i class="bi bi-code-square me-2"></i>Open Source Contributor</h5>
+                        <p class="text-muted">Actively managing utility packages and committing design/styling components to community public developer platforms.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

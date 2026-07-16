@@ -4,61 +4,33 @@
 }
 
 <style>
-    :root {
-        --primary-gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-        --light-bg: #f8fafc; /* Soft light background */
-        --card-bg: #ffffff; /* Pure white card container */
-        --input-bg: #ffffff; /* White input background */
-        --input-border: #1e293b; /* Slate-800 thin border for inputs */
-        --text-main: #1e293b; /* Slate-800 text */
-        --text-muted: #475569; /* Slate-600 muted text */
-        --input-focus-glow: rgba(124, 58, 237, 0.1);
-    }
-
-    body {
-        background-color: var(--light-bg);
-        color: var(--text-main);
-        font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
-    }
-
-    /* Glow Text Gradient */
-    .text-gradient {
-        background: var(--primary-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    /* Card with a Clean Black Border */
     .glass-card {
-        background: var(--card-bg);
-        border: 2px solid #000000; /* Crisp solid black border */
+        background: #ffffff;
+        border: 2px solid #000000;
         border-radius: 20px;
-        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s ease;
     }
 
         .glass-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
         }
 
-    /* Form Inputs with Defined Borders */
     .form-floating > .form-control {
-        background-color: var(--input-bg) !important;
-        border: 1.5px solid var(--input-border); /* Defined input border */
-        color: var(--text-main) !important;
+        background-color: #ffffff !important;
+        border: 1.5px solid #1e293b;
+        color: #1e293b !important;
         border-radius: 12px;
         transition: all 0.3s ease;
     }
 
         .form-floating > .form-control:focus {
-            border-color: #7c3aed; /* Purple highlights on focus */
-            box-shadow: 0 0 0 4px var(--input-focus-glow);
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
         }
 
-    /* Floating Labels Styling */
     .form-floating > label {
-        color: var(--text-muted) !important;
+        color: #475569 !important;
     }
 
     .form-floating > .form-control:focus ~ label,
@@ -66,7 +38,6 @@
         color: #7c3aed !important;
     }
 
-    /* Icon Circle Container with a Thin Black Outline */
     .icon-box {
         width: 65px;
         height: 65px;
@@ -76,7 +47,7 @@
         justify-content: center;
         border-radius: 50%;
         margin: 0 auto 25px;
-        border: 1.5px solid #000000; /* Clean matching black outline */
+        border: 1.5px solid #000000;
     }
 
         .icon-box i {
@@ -86,11 +57,10 @@
             -webkit-text-fill-color: transparent;
         }
 
-    /* Primary Submit Button with a Thin Black Bottom Shadow/Border */
     .btn-gradient {
         background: var(--primary-gradient);
         color: #fff;
-        border: 1.5px solid #000000; /* Sharp border on button */
+        border: 1.5px solid #000000;
         border-radius: 12px;
         font-weight: 600;
         letter-spacing: 0.5px;
@@ -100,10 +70,9 @@
         .btn-gradient:hover {
             color: #fff;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
         }
 
-    /* Validation Errors */
     .field-validation-error {
         font-size: 0.85rem;
         color: #ef4444 !important;
@@ -113,16 +82,11 @@
     }
 </style>
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-
 <div class="container py-5 my-5">
     <div class="row justify-content-center">
         <div class="col-lg-8 col-xl-7 text-center">
 
             <div class="glass-card p-5 mt-4">
-
                 <div class="icon-box">
                     <i class="bi bi-chat-left-text"></i>
                 </div>
@@ -168,7 +132,6 @@
                         </button>
                     </div>
                 </form>
-
             </div>
 
         </div>
