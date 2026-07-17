@@ -111,7 +111,7 @@
             top: 14px;
         }
 
-    /* Beautiful Light Download Button with Black Border Shadow */
+    /* Beautiful Light Download/Action Button with Black Border Shadow */
     .btn-download-custom {
         background-color: #f3f0ff;
         color: #7c3aed;
@@ -185,7 +185,51 @@
             max-height: 42px;
             object-fit: contain;
         }
+
+    /* --- Featured Photos Gallery Specific CSS --- */
+    #featuredGallery::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+    }
+
+    .scroll-smooth {
+        scroll-behavior: smooth;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    /* Floating Navigation Arrows */
+    .gallery-nav-btn {
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        border: 1.5px solid #000000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+
+        .gallery-nav-btn:hover {
+            background-color: #f3f0ff;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+    .prev-btn {
+        left: 15px;
+    }
+
+    .next-btn {
+        right: 15px;
+    }
 </style>
+
 
 <div class="container px-5 py-5 my-4">
     <div class="row align-items-center gy-5 mb-5 pb-4">
@@ -352,6 +396,159 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Featured Photo   -->
+    <!-- FEATURED PHOTOS GALLERY SECTION -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="portfolio-card p-4 position-relative">
+                <h2 class="section-title mb-5"> Competition <span class="text-gradient">Highlights</span> / Featured <span class="text-gradient">Moments</span></h2>
+
+                <!-- Navigation Buttons -->
+                <button class="gallery-nav-btn prev-btn" onclick="scrollGallery(-300)" aria-label="Previous">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="gallery-nav-btn next-btn" onclick="scrollGallery(300)" aria-label="Next">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+
+                <!-- Horizontal Scroll Wrapper -->
+                <div id="featuredGallery" class="d-flex gap-3 overflow-auto pb-2 scroll-smooth" style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
+
+
+                    <!-- Media Item 1 -->
+                    <div class="flex-shrink-0 card border bg-light rounded-3" style="width: 280px; overflow: hidden;">
+                        <div class="p-2 text-muted small bg-white border-bottom">Media</div>
+                        <div style="height: 160px; overflow: hidden; background: #eee;">
+                            <img src="~/assets/aust_showcase.jpg" class="w-100 h-100 object-fit-cover" alt="AUST Project Showcase" onerror="this.src='https://placehold.co/600x400?text=AUST+Showcase'" />
+                        </div>
+                        <div class="p-3 bg-light">
+                            <span class="fw-bold text-dark d-block text-truncate" style="font-size: 0.95rem;">AUST Project Showcase</span>
+                        </div>
+                    </div>
+
+                    <!-- Media Item 2 -->
+                    <div class="flex-shrink-0 card border bg-light rounded-3" style="width: 280px; overflow: hidden;">
+                        <div class="p-2 text-muted small bg-white border-bottom">Media</div>
+                        <div style="height: 160px; overflow: hidden; background: #eee;">
+                            <img src="~/assets/ai_hackathon.jpg" class="w-100 h-100 object-fit-cover" alt="AI Hackathon" onerror="this.src='https://placehold.co/600x400?text=AI+Hackathon'" />
+                        </div>
+                        <div class="p-3 bg-light">
+                            <span class="fw-bold text-dark d-block text-truncate" style="font-size: 0.95rem;">AI Hackathon By Poridhi.io ...</span>
+                        </div>
+                    </div>
+
+                    <!-- Media Item 3 -->
+                    <div class="flex-shrink-0 card border bg-light rounded-3" style="width: 280px; overflow: hidden;">
+                        <div class="p-2 text-muted small bg-white border-bottom">Media</div>
+                        <div style="height: 160px; overflow: hidden; background: #eee;">
+                            <img src="~/assets/hult_prize.jpg" class="w-100 h-100 object-fit-cover" alt="Hult Prize" onerror="this.src='https://placehold.co/600x400?text=Hult+Prize'" />
+                        </div>
+                        <div class="p-3 bg-light">
+                            <span class="fw-bold text-dark d-block text-truncate" style="font-size: 0.95rem;">Hult Prize On Campus Round</span>
+                        </div>
+                    </div>
+
+                    <!-- Media Item 4 -->
+                    <div class="flex-shrink-0 card border bg-light rounded-3" style="width: 280px; overflow: hidden;">
+                        <div class="p-2 text-muted small bg-white border-bottom">Media</div>
+                        <div style="height: 160px; overflow: hidden; background: #eee;">
+                            <img src="~/assets/cu_hackathon.jpg" class="w-100 h-100 object-fit-cover" alt="cu_hackathon" onerror="this.src='https://placehold.co/600x400?text=Competition+Photo'" />
+                        </div>
+                        <div class="p-3 bg-light">
+                            <span class="fw-bold text-dark d-block text-truncate" style="font-size: 0.95rem;">Chittagong University Hackathon</span>
+                        </div>
+                    </div>
+
+                    <!-- Add as many more pictures here as you want! -->
+                    <!-- Media Item 5 -->
+                    <div class="flex-shrink-0 card border bg-light rounded-3" style="width: 280px; overflow: hidden;">
+                        <div class="p-2 text-muted small bg-white border-bottom">Media</div>
+                        <div style="height: 160px; overflow: hidden; background: #eee;">
+                            <img src="~/assets/idea_generation.jpg" class="w-100 h-100 object-fit-cover" alt="idea_generation" onerror="this.src='https://placehold.co/600x400?text=AUST+Showcase'" />
+                        </div>
+                        <div class="p-3 bg-light">
+                            <span class="fw-bold text-dark d-block text-truncate" style="font-size: 0.95rem;">Idea Generation, IIUC Tech Fest</span>
+                        </div>
+                    </div>
+
+                    <!-- Media Item 6 -->
+                    <div class="flex-shrink-0 card border bg-light rounded-3" style="width: 280px; overflow: hidden;">
+                        <div class="p-2 text-muted small bg-white border-bottom">Media</div>
+                        <div style="height: 160px; overflow: hidden; background: #eee;">
+                            <img src="~/assets/IIUPC.png" class="w-100 h-100 object-fit-cover" alt="IIUPC" onerror="this.src='https://placehold.co/600x400?text=Competition+Photo'" />
+                        </div>
+                        <div class="p-3 bg-light">
+                            <span class="fw-bold text-dark d-block text-truncate" style="font-size: 0.95rem;">(IIUPC 2023) - 15th IIUC INTER UNIVERSITY PROGRAMMING CONTEST 2023</span>
+                        </div>
+                    </div>
+
+                    <!-- Media Item 7 -->
+                    <div class="flex-shrink-0 card border bg-light rounded-3" style="width: 280px; overflow: hidden;">
+                        <div class="p-2 text-muted small bg-white border-bottom">Media</div>
+                        <div style="height: 160px; overflow: hidden; background: #eee;">
+                            <img src="~/assets/edge.jpg" class="w-100 h-100 object-fit-cover" alt="edge" onerror="this.src='https://placehold.co/600x400?text=Competition+Photo'" />
+                        </div>
+                        <div class="p-3 bg-light">
+                            <span class="fw-bold text-dark d-block text-truncate" style="font-size: 0.95rem;">EDGE, PHP - Laravel</span>
+                        </div>
+                    </div>
+
+                    <!-- Media Item 8 -->
+                    <div class="flex-shrink-0 card border bg-light rounded-3" style="width: 280px; overflow: hidden;">
+                        <div class="p-2 text-muted small bg-white border-bottom">Media</div>
+                        <div style="height: 160px; overflow: hidden; background: #eee;">
+                            <img src="~/assets/IIUCCPS.jpg" class="w-100 h-100 object-fit-cover" alt="IIUCCPS" onerror="this.src='https://placehold.co/600x400?text=Competition+Photo'" />
+                        </div>
+                        <div class="p-3 bg-light">
+                            <span class="fw-bold text-dark d-block text-truncate" style="font-size: 0.95rem;">IIUCCPS</span>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Media Item 9 -->
+                    <div class="flex-shrink-0 card border bg-light rounded-3" style="width: 280px; overflow: hidden;">
+                        <div class="p-2 text-muted small bg-white border-bottom">Media</div>
+                        <div style="height: 160px; overflow: hidden; background: #eee;">
+                            <img src="~/assets/iiuccps_family.jpg" class="w-100 h-100 object-fit-cover" alt="IIUCCPS_Family" onerror="this.src='https://placehold.co/600x400?text=Competition+Photo'" />
+                        </div>
+                        <div class="p-3 bg-light">
+                            <span class="fw-bold text-dark d-block text-truncate" style="font-size: 0.95rem;">IIUCCPS Family</span>
+                        </div>
+                    </div>
+
+                    <!-- Media Item 10 -->
+                    <div class="flex-shrink-0 card border bg-light rounded-3" style="width: 280px; overflow: hidden;">
+                        <div class="p-2 text-muted small bg-white border-bottom">Media</div>
+                        <div style="height: 160px; overflow: hidden; background: #eee;">
+                            <img src="~/assets/mentor.jpg" class="w-100 h-100 object-fit-cover" alt="mentor" onerror="this.src='https://placehold.co/600x400?text=Competition+Photo'" />
+                        </div>
+                        <div class="p-3 bg-light">
+                            <span class="fw-bold text-dark d-block text-truncate" style="font-size: 0.95rem;">IIUCCPS Mentor</span>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Media Item 11 -->
+                    <div class="flex-shrink-0 card border bg-light rounded-3" style="width: 280px; overflow: hidden;">
+                        <div class="p-2 text-muted small bg-white border-bottom">Media</div>
+                        <div style="height: 160px; overflow: hidden; background: #eee;">
+                            <img src="~/assets/coordinator.jpg" class="w-100 h-100 object-fit-cover" alt="coordinator" onerror="this.src='https://placehold.co/600x400?text=Competition+Photo'" />
+                        </div>
+                        <div class="p-3 bg-light">
+                            <span class="fw-bold text-dark d-block text-truncate" style="font-size: 0.95rem;">IIUCCPS Coordinator</span>
+                        </div>
+                    </div>
+
+
+
+                    <!---->
+
+                </div>
             </div>
         </div>
     </div>
@@ -741,7 +938,7 @@
     <div class="row mb-5">
         <div class="col-12">
             <div class="portfolio-card p-5">
-                <h2 class="section-title mb-5">Education</h2>
+                <h2 class="section-title mb-5">My <span class="text-gradient">Education</span></h2>
 
                 <!-- BSC CSE Card -->
                 <div class="timeline-item mb-5">
@@ -787,25 +984,157 @@
         </div>
     </div>
 
+    <!-- FEATURED PROJECTS SECTION -->
     <div class="row mb-5">
         <div class="col-12">
-            <div class="portfolio-card p-5">
-                <h2 class="section-title mb-5">Featured <span class="text-gradient">Projects</span></h2>
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="p-4 rounded-4 h-100" style="border: 2px solid #000000; background: #fafafa;">
-                            <h4 class="fw-bold text-primary mb-2">E-Commerce Web Portal</h4>
-                            <p class="text-muted">Built dynamic inventory management pages using ASP.NET Core MVC, Entity Framework Core, and SQL Server backend configurations.</p>
-                            <a href="#" class="text-decoration-none fw-bold text-gradient">View Repository <i class="bi bi-github ms-1"></i></a>
+            <div class="portfolio-card p-4">
+
+                <!-- Header Group -->
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <h2 class="section-title mb-5">Featured <span class="text-gradient">Projects</span></h2>
+
+                    <!-- Compact Navigation Arrows -->
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-download-custom px-2 py-1 d-flex align-items-center justify-content-center" style="height: 32px; width: 32px;" onclick="scrollProjects(-360)" aria-label="Previous Project">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button class="btn btn-sm btn-download-custom px-2 py-1 d-flex align-items-center justify-content-center" style="height: 32px; width: 32px;" onclick="scrollProjects(360)" aria-label="Next Project">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Horizontal Projects Scroll Container -->
+                <div id="projectSlider" class="row g-4 flex-nowrap overflow-auto pb-2 scroll-smooth w-100 m-0" style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
+
+                    <!-- Project 1 (Changed fixed width to responsive column classes) -->
+                    <div class="col-12 col-md-4 flex-shrink-0 px-2">
+                        <div class="card bg-light rounded-3 h-100" style="overflow: hidden; border: 2px solid #000000 !important;">
+                            <div style="height: 180px; overflow: hidden; background: #eee; border-bottom: 2px solid #000000;">
+                                <img src="~/assets/project1_thumb.jpg" class="w-100 h-100 object-fit-cover" alt="E-Commerce Web Portal" onerror="this.src='https://placehold.co/600x400?text=E-Commerce+Portal'" />
+                            </div>
+                            <div class="p-3 bg-white d-flex flex-column justify-content-between" style="min-height: 240px;">
+                                <div>
+                                    <h5 class="fw-bold text-primary mb-2">E-Commerce Web Portal</h5>
+                                    <p class="text-muted small mb-3" style="font-size: 0.85rem; line-height: 1.4;">
+                                        Built dynamic inventory management pages using ASP.NET Core MVC, Entity Framework Core, and SQL Server backend configurations.
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">ASP.NET Core</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">EF Core</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">SQL Server</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="https://github.com/" class="btn btn-sm btn-download-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-github"></i> Repository
+                                        </a>
+                                        <a href="https://youtube.com/" class="btn btn-sm btn-video-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-youtube"></i> Watch Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="p-4 rounded-4 h-100" style="border: 2px solid #000000; background: #fafafa;">
-                            <h4 class="fw-bold text-primary mb-2">Interactive Portfolio Framework</h4>
-                            <p class="text-muted">An integrated lightweight landing architecture utilizing responsive Bootstrap 5 cards and custom gradient themes.</p>
-                            <a href="#" class="text-decoration-none fw-bold text-gradient">View Repository <i class="bi bi-github ms-1"></i></a>
+
+                    <!-- Project 2 -->
+                    <div class="col-12 col-md-4 flex-shrink-0 px-2">
+                        <div class="card bg-light rounded-3 h-100" style="overflow: hidden; border: 2px solid #000000 !important;">
+                            <div style="height: 180px; overflow: hidden; background: #eee; border-bottom: 2px solid #000000;">
+                                <img src="~/assets/project2_thumb.jpg" class="w-100 h-100 object-fit-cover" alt="Interactive Portfolio Framework" onerror="this.src='https://placehold.co/600x400?text=Portfolio+Framework'" />
+                            </div>
+                            <div class="p-3 bg-white d-flex flex-column justify-content-between" style="min-height: 240px;">
+                                <div>
+                                    <h5 class="fw-bold text-primary mb-2">Interactive Portfolio</h5>
+                                    <p class="text-muted small mb-3" style="font-size: 0.85rem; line-height: 1.4;">
+                                        An integrated lightweight landing architecture utilizing responsive Bootstrap 5 cards and custom gradient themes.
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">HTML5</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">CSS3</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">JavaScript</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="https://github.com/" class="btn btn-sm btn-download-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-github"></i> Repository
+                                        </a>
+                                        <a href="https://youtube.com/" class="btn btn-sm btn-video-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-youtube"></i> Watch Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Project 2 -->
+                    <div class="col-12 col-md-4 flex-shrink-0 px-2">
+                        <div class="card bg-light rounded-3 h-100" style="overflow: hidden; border: 2px solid #000000 !important;">
+                            <div style="height: 180px; overflow: hidden; background: #eee; border-bottom: 2px solid #000000;">
+                                <img src="~/assets/project2_thumb.jpg" class="w-100 h-100 object-fit-cover" alt="Interactive Portfolio Framework" onerror="this.src='https://placehold.co/600x400?text=Portfolio+Framework'" />
+                            </div>
+                            <div class="p-3 bg-white d-flex flex-column justify-content-between" style="min-height: 240px;">
+                                <div>
+                                    <h5 class="fw-bold text-primary mb-2">Interactive Portfolio</h5>
+                                    <p class="text-muted small mb-3" style="font-size: 0.85rem; line-height: 1.4;">
+                                        An integrated lightweight landing architecture utilizing responsive Bootstrap 5 cards and custom gradient themes.
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">HTML5</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">CSS3</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">JavaScript</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="https://github.com/" class="btn btn-sm btn-download-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-github"></i> Repository
+                                        </a>
+                                        <a href="https://youtube.com/" class="btn btn-sm btn-video-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-youtube"></i> Watch Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="col-12 col-md-4 flex-shrink-0 px-2">
+                        <div class="card bg-light rounded-3 h-100" style="overflow: hidden; border: 2px solid #000000 !important;">
+                            <div style="height: 180px; overflow: hidden; background: #eee; border-bottom: 2px solid #000000;">
+                                <img src="https://placehold.co/600x400?text=Next+Project" class="w-100 h-100 object-fit-cover" alt="Project 3" />
+                            </div>
+                            <div class="p-3 bg-white d-flex flex-column justify-content-between" style="min-height: 240px;">
+                                <div>
+                                    <h5 class="fw-bold text-primary mb-2">Smart Management System</h5>
+                                    <p class="text-muted small mb-3" style="font-size: 0.85rem; line-height: 1.4;">
+                                        Developed a cross-platform data visualization tool using Flask microframework, featuring direct pipeline analytics hooks.
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Flask</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Python</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">SQLite</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="https://github.com/" class="btn btn-sm btn-download-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-github"></i> Repository
+                                        </a>
+                                        <a href="https://youtube.com/" class="btn btn-sm btn-video-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-youtube"></i> Watch Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -815,7 +1144,7 @@
     <div class="row mb-5">
         <div class="col-12">
             <div class="portfolio-card p-5">
-                <h2 class="section-title mb-4">Publications</h2>
+                <h2 class="section-title mb-5">My <span class="text-gradient">Publications</span></h2>
 
                 <!-- Publication 1 -->
                 <div class="p-4 rounded-3 mb-4" style="border: 1px dashed #000000; background-color: #fafafa;">
@@ -902,3 +1231,30 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        function scrollGallery(scrollOffset) {
+            const gallery = document.getElementById('featuredGallery');
+            if (gallery) {
+                gallery.scrollLeft += scrollOffset;
+            }
+        }
+
+        function scrollProjects(direction) {
+            const projectSlider = document.getElementById('projectSlider');
+            if (projectSlider) {
+                // Find the first project card item to calculate exact scrolling width dynamically
+                const firstCard = projectSlider.querySelector('.col-12');
+                if (firstCard) {
+                    const cardWidth = firstCard.offsetWidth;
+                    // Multiply cardWidth by direction (1 for right, -1 for left)
+                    projectSlider.scrollLeft += (cardWidth * direction);
+                } else {
+                    // Fallback default step if card isn't found
+                    projectSlider.scrollLeft += (360 * direction);
+                }
+            }
+        }
+    </script>
+}
