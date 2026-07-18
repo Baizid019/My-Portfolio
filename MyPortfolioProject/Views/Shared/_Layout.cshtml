@@ -30,6 +30,168 @@
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
+
+            /* --- Floating Contact Stack (Very Left Side) --- */
+            .floating-contact-stack {
+                position: fixed;
+                bottom: 30px;
+                left: 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px; /* Spaces the icons cleanly vertically */
+                z-index: 9999;
+            }
+
+            /* Main Shared Neo-Brutalism Icon Settings (Enlarged) */
+            .contact-floating-btn {
+                width: 60px;
+                height: 60px;
+                color: #ffffff !important;
+                border: 2px solid #000000;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.9rem;
+                box-shadow: 3px 3px 0px #000000;
+                transition: all 0.2s ease;
+                text-decoration: none;
+            }
+
+                .contact-floating-btn:hover {
+                    transform: translate(1px, 1px);
+                    box-shadow: 1px 1px 0px #000000;
+                }
+
+            /* Individual Brand Colors & Specific Hover Enhancements */
+            .btn-brand-whatsapp {
+                background-color: #25D366;
+            }
+
+                .btn-brand-whatsapp:hover {
+                    background-color: #20ba5a;
+                }
+
+            .btn-brand-messenger {
+                background-color: #0084FF;
+            }
+
+                .btn-brand-messenger:hover {
+                    background-color: #0076e4;
+                }
+
+            .btn-brand-gmail {
+                background-color: #EA4335;
+            }
+
+                .btn-brand-gmail:hover {
+                    background-color: #d63b2e;
+                }
+
+            /* --- GLOBAL FLOATING CODE BOX DESIGN (Right Side) --- */
+            .global-floating-code {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 280px;
+                background: rgba(30, 41, 59, 0.95);
+                border: 2px solid #000000;
+                border-radius: 12px;
+                box-shadow: 5px 5px 0px #000000;
+                font-family: 'Courier New', Courier, monospace;
+                z-index: 9999;
+                overflow: hidden;
+                animation: floatingWindow 5s ease-in-out infinite; /* Fluid 5s timing */
+            }
+
+            .code-header-bar {
+                background: #1e1e2e;
+                padding: 8px 12px;
+                display: flex;
+                align-items: center;
+                border-bottom: 2px solid #000000;
+            }
+
+                .code-header-bar .window-dot {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    margin-right: 6px;
+                    display: inline-block;
+                }
+
+            .window-dot.r {
+                background: #ff5f56;
+            }
+
+            .window-dot.y {
+                background: #ffbd2e;
+            }
+
+            .window-dot.g {
+                background: #27c93f;
+            }
+
+            .code-bar-title {
+                color: #94a3b8;
+                font-size: 0.75rem;
+                margin-left: auto;
+                font-weight: bold;
+            }
+
+            .code-body-area {
+                padding: 12px 15px;
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+
+                .code-body-area pre {
+                    margin: 0;
+                    color: #f8f8f2;
+                    white-space: pre-wrap;
+                }
+
+                .code-body-area .kw {
+                    color: #ff79c6;
+                    font-weight: bold;
+                }
+
+                .code-body-area .str {
+                    color: #f1fa8c;
+                }
+
+                .code-body-area .cmt {
+                    color: #6272a4;
+                    font-style: italic;
+                }
+
+            /* Smooth Floating Keyframe Animation (Maximized -45px Range) */
+            @@keyframes floatingWindow {
+                0% {
+                    transform: translateY(0px) rotate(-1deg);
+                }
+
+                50% {
+                    transform: translateY(-45px) rotate(4deg);
+                }
+
+                100% {
+                    transform: translateY(0px) rotate(-1deg);
+                }
+            }
+
+            /* Global hover style for the show credential neo-brutalism button */
+            .btn-download-custom:hover {
+                transform: translate(1px, 1px);
+                box-shadow: 1px 1px 0px #000000 !important;
+                background-color: #f8f7ff !important;
+            }
+
+            /* Hide webkit scrollbar for dynamic certification/project rows */
+            #certificationsSlider::-webkit-scrollbar,
+            #projectSlider::-webkit-scrollbar {
+                display: none;
+            }
     </style>
 </head>
 <body class="d-flex flex-column">
@@ -60,6 +222,41 @@
     <main class="flex-shrink-0">
         @RenderBody()
     </main>
+
+    <!-- FLOATING CONTACT ACTIONS LINKED GROUP (Left Side) -->
+    <div class="floating-contact-stack">
+        <!-- Messenger Link -->
+        <a href="https://m.me/baizid.kamruzzaman" target="_blank" class="contact-floating-btn btn-brand-messenger" aria-label="Chat on Messenger">
+            <i class="bi bi-messenger"></i>
+        </a>
+
+        <!-- Fixed Gmail Link (Opens directly in the browser) -->
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=baizidkamruzzaman@gmail.com" target="_blank" class="contact-floating-btn btn-brand-gmail" aria-label="Email Me">
+            <i class="bi bi-envelope-fill"></i>
+        </a>
+
+        <!-- WhatsApp Link -->
+        <a href="https://wa.me/8801846200413" target="_blank" class="contact-floating-btn btn-brand-whatsapp" aria-label="Chat on WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- GLOBAL FLOATING CODE BOX DESIGN WITH EMOJI (Right Side) -->
+    <div class="global-floating-code d-none d-md-block">
+        <div class="code-header-bar">
+            <span class="window-dot r"></span>
+            <span class="window-dot y"></span>
+            <span class="window-dot g"></span>
+            <span class="code-bar-title">status.js &#9889;</span>
+        </div>
+        <div class="code-body-area">
+            <pre><code><span class="kw">const</span> dev = {
+  status: <span class="str">'Coding'</span>,
+  coffee: <span class="kw">true</span> &#9749;
+};
+<span class="cmt">// Always active &#128640;</span></code></pre>
+        </div>
+    </div>
 
     <footer class="py-4 mt-auto border-top border-2 border-dark bg-transparent">
         <div class="container px-5">
