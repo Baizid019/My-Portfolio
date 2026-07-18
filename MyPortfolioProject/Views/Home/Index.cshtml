@@ -990,24 +990,23 @@
             <div class="portfolio-card p-4">
 
                 <!-- Header Group -->
-                <div class="d-flex align-items-center gap-3 mb-4">
-                    <h2 class="section-title mb-5">Featured <span class="text-gradient">Projects</span></h2>
-
+                <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                    <h2 class="section-title mb-0">Featured <span class="text-gradient">Projects</span></h2>
                     <!-- Compact Navigation Arrows -->
                     <div class="d-flex gap-2">
-                        <button class="btn btn-sm btn-download-custom px-2 py-1 d-flex align-items-center justify-content-center" style="height: 32px; width: 32px;" onclick="scrollProjects(-360)" aria-label="Previous Project">
+                        <button class="btn btn-sm btn-download-custom px-2 py-1 d-flex align-items-center justify-content-center" style="height: 32px; width: 32px;" onclick="scrollProjects(-1)" aria-label="Previous Project">
                             <i class="bi bi-chevron-left"></i>
                         </button>
-                        <button class="btn btn-sm btn-download-custom px-2 py-1 d-flex align-items-center justify-content-center" style="height: 32px; width: 32px;" onclick="scrollProjects(360)" aria-label="Next Project">
+                        <button class="btn btn-sm btn-download-custom px-2 py-1 d-flex align-items-center justify-content-center" style="height: 32px; width: 32px;" onclick="scrollProjects(1)" aria-label="Next Project">
                             <i class="bi bi-chevron-right"></i>
                         </button>
                     </div>
                 </div>
 
                 <!-- Horizontal Projects Scroll Container -->
-                <div id="projectSlider" class="row g-4 flex-nowrap overflow-auto pb-2 scroll-smooth w-100 m-0" style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
+                <div id="projectSlider" class="row g-4 flex-nowrap overflow-auto pb-2 scroll-smooth w-100 mx-auto" style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
 
-                    <!-- Project 1 (Changed fixed width to responsive column classes) -->
+                    <!-- Project 1 -->
                     <div class="col-12 col-md-4 flex-shrink-0 px-2">
                         <div class="card bg-light rounded-3 h-100" style="overflow: hidden; border: 2px solid #000000 !important;">
                             <div style="height: 180px; overflow: hidden; background: #eee; border-bottom: 2px solid #000000;">
@@ -1041,80 +1040,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
-                    <div class="col-12 col-md-4 flex-shrink-0 px-2">
-                        <div class="card bg-light rounded-3 h-100" style="overflow: hidden; border: 2px solid #000000 !important;">
-                            <div style="height: 180px; overflow: hidden; background: #eee; border-bottom: 2px solid #000000;">
-                                <img src="~/assets/journey.png" class="w-100 h-100 object-fit-cover" alt="Interactive Portfolio Framework" onerror="this.src='https://placehold.co/600x400?text=Portfolio+Framework'" />
-                            </div>
-                            <div class="p-3 bg-white d-flex flex-column justify-content-between" style="min-height: 240px;">
-                                <div>
-                                    <h5 class="fw-bold text-primary mb-2">Baizid's Journey</h5>
-                                    <p class="text-muted small mb-3" style="font-size: 0.85rem; line-height: 1.4;">
-                                        A Computer Graphics Project Demonstrating My Educational Journey from College to IIUC and Beyond into My Professional Career
-                                    </p>
-                                </div>
-                                <div>
-                                    <div class="d-flex flex-wrap gap-1 mb-3">
-                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Computer Graphics</span>
-                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">OpenGL / Glut</span>
-                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">C++</span>
-                                    </div>
-                                    <div class="d-flex gap-2">
-                                        <a href="https://github.com/Baizid019/Computer-Graphics-Lab-Code-Project/blob/main/My_project.txt" class="btn btn-sm btn-download-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
-                                            <i class="bi bi-github"></i> Repository
-                                        </a>
-                                        <a href="https://youtu.be/r0pps5lBBmY?si=iyb1vL1VqD8r0Qqj" class="btn btn-sm btn-video-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
-                                            <i class="bi bi-youtube"></i> Watch Demo
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Project 3 -->
-                    <div class="col-12 col-md-4 flex-shrink-0 px-2">
-                        <div class="card bg-light rounded-3 h-100" style="overflow: hidden; border: 2px solid #000000 !important;">
-                            <div style="height: 180px; overflow: hidden; background: #eee; border-bottom: 2px solid #000000;">
-                                <img src="~/assets/rail.png" class="w-100 h-100 object-fit-cover" alt="Interactive Portfolio Framework" onerror="this.src='https://placehold.co/600x400?text=Portfolio+Framework'" />
-                            </div>
-                            <div class="p-3 bg-white d-flex flex-column justify-content-between" style="min-height: 240px;">
-                                <div>
-                                    <h5 class="fw-bold text-primary mb-2">Railway Guard Post Management System</h5>
-                                    <p class="text-muted small mb-3" style="font-size: 0.85rem; line-height: 1.4;">
-                                        Designed a smart railway gate automation system using Arduino, sensors, and a servo motor to automatically open and close the crossing gate while providing visual and audible safety alerts.
-                                    </p>
-                                </div>
-                                <div>
-                                    <div class="d-flex flex-wrap gap-1 mb-3">
-                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Arduino Uno</span>
-                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Sensor</span>
-                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Breadboard</span>
-                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Jumper Wire</span>
-                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Battery</span>
-                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Servo motor</span>
-                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">LED</span>
-                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Buzzer</span>
-                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Register </span>
-                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Dummy Train</span>
-                                    </div>
-                                    <div class="d-flex gap-2">
-                                        <a href="https://github.com/Baizid019/Railway-Guard-Post-Management-System" class="btn btn-sm btn-download-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
-                                            <i class="bi bi-github"></i> Repository
-                                        </a>
-                                        <a href="https://youtu.be/bacP4D-ymVI?si=YttKPqFDrPaoadsP" class="btn btn-sm btn-video-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
-                                            <i class="bi bi-youtube"></i> Watch Demo
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Project 4-1  -->
+                    <!-- Project 4-1 -->
                     <div class="col-12 col-md-4 flex-shrink-0 px-2">
                         <div class="card bg-light rounded-3 h-100" style="overflow: hidden; border: 2px solid #000000 !important;">
                             <div style="height: 180px; overflow: hidden; background: #eee; border-bottom: 2px solid #000000;">
@@ -1143,6 +1069,79 @@
                                             <i class="bi bi-github"></i> Repository
                                         </a>
                                         <a href="https://youtu.be/ZkDh7z2Mcns?si=IO8iVDC5rsYJ6odo" class="btn btn-sm btn-video-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-youtube"></i> Watch Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4-2 -->
+                    <div class="col-12 col-md-4 flex-shrink-0 px-2">
+                        <div class="card bg-light rounded-3 h-100" style="overflow: hidden; border: 2px solid #000000 !important;">
+                            <div style="height: 180px; overflow: hidden; background: #eee; border-bottom: 2px solid #000000;">
+                                <img src="~/assets/bms.png" class="w-100 h-100 object-fit-cover" alt="Interactive Portfolio Framework" onerror="this.src='https://placehold.co/600x400?text=Portfolio+Framework'" />
+                            </div>
+                            <div class="p-3 bg-white d-flex flex-column justify-content-between" style="min-height: 240px;">
+                                <div>
+                                    <h5 class="fw-bold text-primary mb-2">Book Management System</h5>
+                                    <p class="text-muted small mb-3" style="font-size: 0.85rem; line-height: 1.4;">
+                                        Developed a Book Management System with full CRUD functionality using ASP.NET Core (.NET 10), Entity Framework Core, and SQL Server.
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">ASP .NET Core MVC</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Microsoft SQL Server</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Entity Framework Core</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">HTML</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">CSS</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Bootstrap</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">JavaScript</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="https://github.com/Baizid019/Book-Management-System-CRUD-Project-ASP-Dot-Net" class="btn btn-sm btn-download-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-github"></i> Repository
+                                        </a>
+                                        <a href="#" class="btn btn-sm btn-video-custom d-inline-flex align-items-center gap-1 py-1 px-2">
+                                            <i class="bi bi-youtube"></i> Watch Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4-3 -->
+                    <div class="col-12 col-md-4 flex-shrink-0 px-2">
+                        <div class="card bg-light rounded-3 h-100" style="overflow: hidden; border: 2px solid #000000 !important;">
+                            <div style="height: 180px; overflow: hidden; background: #eee; border-bottom: 2px solid #000000;">
+                                <img src="~/assets/pfm.png" class="w-100 h-100 object-fit-cover" alt="Interactive Portfolio Framework" onerror="this.src='https://placehold.co/600x400?text=Portfolio+Framework'" />
+                            </div>
+                            <div class="p-3 bg-white d-flex flex-column justify-content-between" style="min-height: 240px;">
+                                <div>
+                                    <h5 class="fw-bold text-primary mb-2">Personal Finance Manager</h5>
+                                    <p class="text-muted small mb-3" style="font-size: 0.85rem; line-height: 1.4;">
+                                        Developed a Personal Finance Manager using ASP.NET Core (.NET 10) with N-Tier Architecture, enabling users to securely manage expenses, categories, and financial records with Entity Framework Core and SQL Server.
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">N-Tier Architecture</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">ASP .NET Core MVC</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Microsoft SQL Server</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Entity Framework Core</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">HTML</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">CSS</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Bootstrap</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">JavaScript</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="https://github.com/Baizid019/Personal-Finance-Manager-N-Tier-Architecture-ASP-DOT-NET-Core" class="btn btn-sm btn-download-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-github"></i> Repository
+                                        </a>
+                                        <a href="#" class="btn btn-sm btn-video-custom d-inline-flex align-items-center gap-1 py-1 px-2">
                                             <i class="bi bi-youtube"></i> Watch Demo
                                         </a>
                                     </div>
@@ -1222,7 +1221,80 @@
 
 
 
-                 
+
+                    <!-- Project 2 -->
+                    <div class="col-12 col-md-4 flex-shrink-0 px-2">
+                        <div class="card bg-light rounded-3 h-100" style="overflow: hidden; border: 2px solid #000000 !important;">
+                            <div style="height: 180px; overflow: hidden; background: #eee; border-bottom: 2px solid #000000;">
+                                <img src="~/assets/journey.png" class="w-100 h-100 object-fit-cover" alt="Interactive Portfolio Framework" onerror="this.src='https://placehold.co/600x400?text=Portfolio+Framework'" />
+                            </div>
+                            <div class="p-3 bg-white d-flex flex-column justify-content-between" style="min-height: 240px;">
+                                <div>
+                                    <h5 class="fw-bold text-primary mb-2">Baizid's Journey</h5>
+                                    <p class="text-muted small mb-3" style="font-size: 0.85rem; line-height: 1.4;">
+                                        A Computer Graphics Project Demonstrating My Educational Journey from College to IIUC and Beyond into My Professional Career
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Computer Graphics</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">OpenGL / Glut</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">C++</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="https://github.com/Baizid019/Computer-Graphics-Lab-Code-Project/blob/main/My_project.txt" class="btn btn-sm btn-download-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-github"></i> Repository
+                                        </a>
+                                        <a href="https://youtu.be/r0pps5lBBmY?si=iyb1vL1VqD8r0Qqj" class="btn btn-sm btn-video-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-youtube"></i> Watch Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="col-12 col-md-4 flex-shrink-0 px-2">
+                        <div class="card bg-light rounded-3 h-100" style="overflow: hidden; border: 2px solid #000000 !important;">
+                            <div style="height: 180px; overflow: hidden; background: #eee; border-bottom: 2px solid #000000;">
+                                <img src="~/assets/rail.png" class="w-100 h-100 object-fit-cover" alt="Interactive Portfolio Framework" onerror="this.src='https://placehold.co/600x400?text=Portfolio+Framework'" />
+                            </div>
+                            <div class="p-3 bg-white d-flex flex-column justify-content-between" style="min-height: 240px;">
+                                <div>
+                                    <h5 class="fw-bold text-primary mb-2">Railway Guard Post Management System</h5>
+                                    <p class="text-muted small mb-3" style="font-size: 0.85rem; line-height: 1.4;">
+                                        Designed a smart railway gate automation system using Arduino, sensors, and a servo motor to automatically open and close the crossing gate while providing visual and audible safety alerts.
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Arduino Uno</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Sensor</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Breadboard</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Jumper Wire</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Battery</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Servo motor</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">LED</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Buzzer</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Register</span>
+                                        <span class="badge bg-light text-dark border border-dark" style="font-size: 0.7rem;">Dummy Train</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="https://github.com/Baizid019/Railway-Guard-Post-Management-System" class="btn btn-sm btn-download-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-github"></i> Repository
+                                        </a>
+                                        <a href="https://youtu.be/bacP4D-ymVI?si=YttKPqFDrPaoadsP" class="btn btn-sm btn-video-custom d-inline-flex align-items-center gap-1 py-1 px-2" target="_blank">
+                                            <i class="bi bi-youtube"></i> Watch Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
 
                 </div>
             </div>
@@ -1326,24 +1398,36 @@
         function scrollGallery(scrollOffset) {
             const gallery = document.getElementById('featuredGallery');
             if (gallery) {
-                gallery.scrollLeft += scrollOffset;
+                gallery.scrollBy({
+                    left: scrollOffset,
+                    behavior: 'smooth'
+                });
             }
         }
 
         function scrollProjects(direction) {
             const projectSlider = document.getElementById('projectSlider');
             if (projectSlider) {
-                // Find the first project card item to calculate exact scrolling width dynamically
-                const firstCard = projectSlider.querySelector('.col-12');
+                // Target the flex-shrink-0 class to get the exact layout width of the card item
+                const firstCard = projectSlider.querySelector('.flex-shrink-0');
                 if (firstCard) {
                     const cardWidth = firstCard.offsetWidth;
-                    // Multiply cardWidth by direction (1 for right, -1 for left)
-                    projectSlider.scrollLeft += (cardWidth * direction);
+                    // Multiply card width by direction (1 for right, -1 for left)
+                    projectSlider.scrollBy({
+                        left: cardWidth * direction,
+                        behavior: 'smooth'
+                    });
                 } else {
-                    // Fallback default step if card isn't found
-                    projectSlider.scrollLeft += (360 * direction);
+                    // Fallback default step if card structure changes
+                    projectSlider.scrollBy({
+                        left: 360 * direction,
+                        behavior: 'smooth'
+                    });
                 }
             }
         }
     </script>
+}
+
+
 }
