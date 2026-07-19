@@ -31,6 +31,28 @@
                 -webkit-text-fill-color: transparent;
             }
 
+            /* --- BEAUTIFIED NEO-BRUTALISM NAVBAR --- */
+            .custom-nav-link {
+                background-color: #ffffff;
+                color: #000000 !important;
+                border: 2px solid #000000;
+                border-radius: 8px;
+                box-shadow: 2px 2px 0px #000000;
+                transition: all 0.2s ease;
+                font-weight: 700 !important;
+            }
+
+                .custom-nav-link:hover {
+                    transform: translate(1px, 1px);
+                    box-shadow: 1px 1px 0px #000000;
+                    background-color: #f8f7ff;
+                }
+
+            /* Active page styling wrapper */
+            .nav-item {
+                margin-left: 12px;
+            }
+
             /* --- Floating Contact Stack (Very Left Side) --- */
             .floating-contact-stack {
                 position: fixed;
@@ -38,11 +60,10 @@
                 left: 30px;
                 display: flex;
                 flex-direction: column;
-                gap: 15px; /* Spaces the icons cleanly vertically */
+                gap: 15px;
                 z-index: 9999;
             }
 
-            /* Main Shared Neo-Brutalism Icon Settings (Enlarged) */
             .contact-floating-btn {
                 width: 60px;
                 height: 60px;
@@ -63,7 +84,6 @@
                     box-shadow: 1px 1px 0px #000000;
                 }
 
-            /* Individual Brand Colors & Specific Hover Enhancements */
             .btn-brand-whatsapp {
                 background-color: #25D366;
             }
@@ -101,7 +121,7 @@
                 font-family: 'Courier New', Courier, monospace;
                 z-index: 9999;
                 overflow: hidden;
-                animation: floatingWindow 5s ease-in-out infinite; /* Fluid 5s timing */
+                animation: floatingWindow 5s ease-in-out infinite;
             }
 
             .code-header-bar {
@@ -165,7 +185,7 @@
                     font-style: italic;
                 }
 
-            /* Smooth Floating Keyframe Animation (Maximized -45px Range) */
+            /* Smooth Floating Keyframe Animation */
             @@keyframes floatingWindow {
                 0% {
                     transform: translateY(0px) rotate(-1deg);
@@ -180,14 +200,12 @@
                 }
             }
 
-            /* Global hover style for the show credential neo-brutalism button */
             .btn-download-custom:hover {
                 transform: translate(1px, 1px);
                 box-shadow: 1px 1px 0px #000000 !important;
                 background-color: #f8f7ff !important;
             }
 
-            /* Hide webkit scrollbar for dynamic certification/project rows */
             #certificationsSlider::-webkit-scrollbar,
             #projectSlider::-webkit-scrollbar {
                 display: none;
@@ -196,23 +214,28 @@
 </head>
 <body class="d-flex flex-column">
 
+    <!-- UPDATED: Beautifully Restyled Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 border-bottom border-2 border-dark">
         <div class="container px-5">
-            <a class="navbar-brand fw-extrabold" asp-controller="Home" asp-action="Index" style="font-size: 2.2rem; font-weight: 800; letter-spacing: -1px;">
+            <a class="navbar-brand fw-extrabold d-flex align-items-center gap-2" asp-controller="Home" asp-action="Index" style="font-size: 2.2rem; font-weight: 800; letter-spacing: -1px;">
                 <span class="text-gradient">My Portfolio</span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border-2 border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border-radius: 6px; background: #fff;">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link text-dark fs-5 px-3" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link custom-nav-link fs-6 px-4 py-2 d-flex align-items-center gap-2" asp-controller="Home" asp-action="Index">
+                            <i class="bi bi-house-door-fill"></i> Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark fs-5 px-3" asp-controller="Contact" asp-action="Index">Ask Question</a>
+                        <a class="nav-link custom-nav-link fs-6 px-4 py-2 d-flex align-items-center gap-2" asp-controller="Contact" asp-action="Index">
+                            <i class="bi bi-chat-left-text-fill"></i> Ask Question
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -225,17 +248,12 @@
 
     <!-- FLOATING CONTACT ACTIONS LINKED GROUP (Left Side) -->
     <div class="floating-contact-stack">
-        <!-- Messenger Link -->
         <a href="https://m.me/baizid.kamruzzaman" target="_blank" class="contact-floating-btn btn-brand-messenger" aria-label="Chat on Messenger">
             <i class="bi bi-messenger"></i>
         </a>
-
-        <!-- Fixed Gmail Link (Opens directly in the browser) -->
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=baizidkamruzzaman@gmail.com" target="_blank" class="contact-floating-btn btn-brand-gmail" aria-label="Email Me">
             <i class="bi bi-envelope-fill"></i>
         </a>
-
-        <!-- WhatsApp Link -->
         <a href="https://wa.me/8801846200413" target="_blank" class="contact-floating-btn btn-brand-whatsapp" aria-label="Chat on WhatsApp">
             <i class="bi bi-whatsapp"></i>
         </a>
