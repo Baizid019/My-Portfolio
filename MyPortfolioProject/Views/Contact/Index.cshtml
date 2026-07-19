@@ -4,131 +4,155 @@
 }
 
 <style>
-    .glass-card {
-        background: #ffffff;
-        border: 2px solid #000000;
-        border-radius: 20px;
-        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
-        transition: transform 0.3s ease;
+    /* Neo-Brutalism Theme Variables & Scaffolding */
+    .brutal-card {
+        background: #f3e8ff; /* Vibrant light color accent background */
+        border: 3px solid #000000;
+        border-radius: 24px;
+        box-shadow: 8px 8px 0px #000000;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-        .glass-card:hover {
-            transform: translateY(-3px);
-        }
-
-    .form-floating > .form-control {
+    /* High-contrast accessible input elements */
+    .brutal-input {
         background-color: #ffffff !important;
-        border: 1.5px solid #1e293b;
-        color: #1e293b !important;
-        border-radius: 12px;
-        transition: all 0.3s ease;
+        border: 2px solid #000000 !important;
+        color: #000000 !important;
+        border-radius: 12px !important;
+        font-weight: 600;
+        box-shadow: none !important;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-        .form-floating > .form-control:focus {
-            border-color: #7c3aed;
-            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+        .brutal-input:focus {
+            border-color: #000000 !important;
+            background-color: #ffffff !important;
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px #000000 !important;
         }
 
+    /* Keep native floating labels crisp against the flat borders */
     .form-floating > label {
         color: #475569 !important;
+        font-weight: 600;
+        padding-left: 1rem;
     }
 
-    .form-floating > .form-control:focus ~ label,
-    .form-floating > .form-control:not(:placeholder-shown) ~ label {
+    .form-floating > .brutal-input:focus ~ label,
+    .form-floating > .brutal-input:not(:placeholder-shown) ~ label {
         color: #7c3aed !important;
+        font-weight: 800;
     }
 
-    .icon-box {
-        width: 65px;
-        height: 65px;
-        background: rgba(124, 58, 237, 0.08);
-        display: flex;
+    /* Decorative badge elements */
+    .brutal-icon-box {
+        width: 60px;
+        height: 60px;
+        background: #fef08a; /* Vibrant pastel yellow pop */
+        display: inline-flex;
         align-items: center;
         justify-content: center;
-        border-radius: 50%;
-        margin: 0 auto 25px;
-        border: 1.5px solid #000000;
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+        border: 2px solid #000000;
+        box-shadow: 3px 3px 0px #000000;
     }
 
-        .icon-box i {
-            font-size: 1.8rem;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .brutal-icon-box i {
+            font-size: 1.6rem;
+            color: #7c3aed;
         }
 
-    .btn-gradient {
-        background: var(--primary-gradient);
-        color: #fff;
-        border: 1.5px solid #000000;
+    /* Solid Hard-Shadow Submission Button */
+    .btn-brutal {
+        background: #7c3aed;
+        color: #ffffff;
+        border: 2px solid #000000;
         border-radius: 12px;
-        font-weight: 600;
+        font-weight: 800;
         letter-spacing: 0.5px;
-        transition: all 0.3s ease;
+        box-shadow: 0px 4px 0px #000000;
+        transition: all 0.15s ease;
     }
 
-        .btn-gradient:hover {
-            color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+        .btn-brutal:hover, .btn-brutal:focus {
+            background: #6d28d9;
+            color: #ffffff;
+            transform: translateY(2px);
+            box-shadow: 0px 2px 0px #000000;
         }
 
+    /* Front-end server validation blocks */
     .field-validation-error {
         font-size: 0.85rem;
         color: #ef4444 !important;
+        font-weight: 700;
         display: block;
-        margin-top: 5px;
+        margin-top: 6px;
         text-align: left;
+        padding-left: 4px;
     }
 </style>
 
-<div class="container py-5 my-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-8 col-xl-7 text-center">
+<!-- Spacing wrapper altered to mb-5 to help pull sections naturally tight together -->
+<div class="container mb-5 pt-4 d-flex justify-content-center">
+    <div class="row w-100 justify-content-center">
+        <div class="col-lg-8 col-xl-7">
 
-            <div class="glass-card p-5 mt-4">
-                <div class="icon-box">
-                    <i class="bi bi-chat-left-text"></i>
+            <!-- Main Neo-Brutalism Themed Card Module -->
+            <div class="brutal-card p-4 p-md-5 text-center">
+
+                <!-- Vibrant Header Area -->
+                <div class="brutal-icon-box">
+                    <i class="bi bi-chat-left-text-fill"></i>
                 </div>
 
-                <h1 class="fw-extrabold display-5 mb-3" style="font-weight: 800; color: #000000;">
-                    Ask a <span class="text-gradient">Question</span>
+                <h1 class="display-6 mb-2" style="font-weight: 900; color: #000000; letter-spacing: -1px;">
+                    Ask a <span class="text-gradient" style="background: linear-gradient(45deg, #7c3aed, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Question</span>
                 </h1>
-                <p class="text-muted fs-5 mb-5">
+
+                <p class="mb-4" style="font-size: 1rem; color: #4b5563; font-weight: 600; line-height: 1.5;">
                     Have a technical query or want to connect? Let me know below!
                 </p>
 
+                <!-- Status Banner System (Preserved) -->
                 @if (TempData["SuccessMessage"] != null)
                 {
-                    <div class="alert alert-success border-2 border-success bg-success bg-opacity-10 text-success p-3 rounded-3 mb-4 text-start">
-                        <i class="bi bi-check-circle-fill me-2"></i> @TempData["SuccessMessage"]
+                    <div class="alert alert-success border-3 border-dark p-3 rounded-3 mb-4 text-start d-flex align-items-center" style="background: #bbf7d0; color: #000000; box-shadow: 3px 3px 0px #000000;">
+                        <i class="bi bi-check-circle-fill me-2 fs-5 text-success"></i>
+                        <strong style="font-weight: 800;">@TempData["SuccessMessage"]</strong>
                     </div>
                 }
 
+                <!-- Functional ASP.NET Core Action Pipeline Form -->
                 <form asp-controller="Contact" asp-action="Ask" method="post">
                     @Html.AntiForgeryToken()
 
+                    <!-- Name Component -->
                     <div class="form-floating mb-4">
-                        <input class="form-control" asp-for="Name" placeholder="Full Name" autocomplete="off" />
+                        <input class="form-control brutal-input" asp-for="Name" placeholder="Full Name" autocomplete="off" />
                         <label asp-for="Name">Full Name</label>
                         <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
 
+                    <!-- Email Component -->
                     <div class="form-floating mb-4">
-                        <input class="form-control" asp-for="Email" type="email" placeholder="name@example.com" autocomplete="off" />
+                        <input class="form-control brutal-input" asp-for="Email" type="email" placeholder="name@example.com" autocomplete="off" />
                         <label asp-for="Email">Email address</label>
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
 
-                    <div class="form-floating mb-5">
-                        <textarea class="form-control" asp-for="Question" placeholder="Write your question..." style="height: 12rem"></textarea>
+                    <!-- Message Body Component -->
+                    <div class="form-floating mb-4">
+                        <textarea class="form-control brutal-input" asp-for="Question" placeholder="Write your question..." style="height: 12rem; resize: none;"></textarea>
                         <label asp-for="Question">Your Question</label>
                         <span asp-validation-for="Question" class="text-danger"></span>
                     </div>
 
-                    <div class="d-grid">
-                        <button class="btn btn-gradient btn-lg py-3 fs-5" type="submit">
-                            Send Message <i class="bi bi-send ms-2"></i>
+                    <!-- Submission Action Block -->
+                    <div class="d-grid mt-2">
+                        <button class="btn btn-brutal btn-lg py-3 fs-5" type="submit">
+                            Send Message <i class="bi bi-send-fill ms-2" style="font-size: 0.95rem;"></i>
                         </button>
                     </div>
                 </form>
